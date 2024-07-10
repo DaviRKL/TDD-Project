@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from store.core.config import settings
+from store.controllers.product import router as product
 
 
 class App(FastAPI):
@@ -14,3 +15,4 @@ class App(FastAPI):
 
 
 app = App()
+app.include_router(product, prefix="/products")

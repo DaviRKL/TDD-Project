@@ -5,8 +5,7 @@ precommit-install:
 	@poetry run pre-commit install
 
 test:
-
-	@poetry run pytest
+	@export PYTHONPATH=$(pwd) && poetry run pytest
 
 test-matching:
-	@poetry run pytest -s -rx -k $(K) --pdb store ./tests/
+	@export PYTHONPATH=$(pwd) && poetry run pytest -s -rx -k $(K) --pdb store ./tests/
